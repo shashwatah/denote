@@ -22,7 +22,7 @@ denon start
 
 ## API Endpoints
 
-```bash
+```
 /api/notes                          # => Get all the notes
 /api/notes/:id                      # => Get one particular note
 /api/notes/add                      # => Add a note
