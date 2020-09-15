@@ -5,7 +5,7 @@ import { Note } from './../types/main.interface.ts';
 let notes: Array<Note> = [];
 
 // @desc Get all notes
-// @route /api/notes/all
+// @route /api/notes
 export const getNotes = ({ response }: { response: any }) => {
     if(notes.length) {
         response.body = {
@@ -21,7 +21,7 @@ export const getNotes = ({ response }: { response: any }) => {
 };
 
 // @desc Get a particular Note
-// @route /api/notes/one/:id
+// @route /api/notes/:id
 export const getNote = ({ params, response }: { params: { id: string }, response: any }) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
 
@@ -66,7 +66,7 @@ export const addNote = async ( { request, response }: { request: any, response: 
 }
 
 // @desc Update a note
-// @route /api/notes/update/:id
+// @route /api/notes/:id/update
 export const updateNote = async ({ params, request, response }: { params: { id: string }, request: any, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
 
@@ -103,7 +103,7 @@ export const updateNote = async ({ params, request, response }: { params: { id: 
 
 
 // @desc Delete a Note
-// @route /api/notes/delete/:id
+// @route /api/notes/:id/delete
 export const deleteNote = ({ params, response }: { params: { id: string }, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
     

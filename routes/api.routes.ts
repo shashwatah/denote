@@ -8,10 +8,10 @@ router.get("/", ({ response }: { response: any }) => {
     response.body = `Denote is running on port 108`;
 });
 
-router.get('/api/notes/all', getNotes)
-    .get('/api/notes/one/:id', getNote)
+router.get('/api/notes', getNotes)
+    .get('/api/notes/:id', getNote)
     .post('/api/notes/add', addNote)
-    .put('/api/notes/update/:id', updateNote)
-    .delete('/api/notes/delete/:id', deleteNote);
+    .put('/api/notes/:id/update', updateNote)
+    .delete('/api/notes/:id/delete', deleteNote);
 
 export default router;
