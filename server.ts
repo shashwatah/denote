@@ -1,15 +1,13 @@
-import { serve, Server } from "https://deno.land/std@0.69.0/http/server.ts";
+import { Application } from "https://deno.land/x/oak/mod.ts";
+
+import router from './routes/api.routes.ts';
 
 const port: number = 108;
 
-const server: Server = serve({
-    port: port
-});
+const server: Application = new Application();
 
-console.log(`App is running on port ${port}`);
+server.use(router.routes());
+server.use(router.allowedMethods());
 
-for await(const req of server) {
-    req.respond({
-        body: `Denote is running on port: ${port}`
-    });
-}
+console.log(`Denote is running on port ${port}`);
+await server.listen({ port });
