@@ -17,7 +17,7 @@ $ deno install --allow-read --allow-run --allow-write --allow-net -f -q --unstab
 Run Denote with the following command:
 
 ```bash
-denon start
+$ denon start
 ```
 
 ## API Endpoints
