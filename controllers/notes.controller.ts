@@ -1,12 +1,12 @@
 import { v4 } from 'https://deno.land/std/uuid/mod.ts';
 
-import { Note } from './../types/main.interface.ts';
+import { Note } from './../types/main.interfaces.ts';
 
 export let notes: Array<Note> = [];
 
 // @desc Get all notes
 // @route /api/notes
-export const getNotes = ({ response }: { response: any }) => {
+const getNotes = ({ response }: { response: any }) => {
     if(notes.length) {
         response.body = {
             message: "Success!",
@@ -20,30 +20,9 @@ export const getNotes = ({ response }: { response: any }) => {
     }
 };
 
-// @desc Get a particular Note
-// @route /api/notes/:id
-export const getNote = ({ params, response }: { params: { id: string }, response: any }) => {
-    const note: Note | undefined = notes.find(n => n.id === params.id);
-
-    if(note) {
-        response.status = 200;
-        response.body = {
-            message: "Success!",
-            status: 200,
-            data: note
-        };
-    } else {
-        response.status = 404;
-        response.body = {
-            message: "Note does not exist.",
-            status: 404
-        }
-    }
-}
-
 // @desc Add a note
 // @route /api/notes/add
-export const addNote = async ( { request, response }: { request: any, response: any }) => {
+const addNote = async ( { request, response }: { request: any, response: any }) => {
     const body = await request.body();
 
     if(request.hasBody) {
@@ -65,9 +44,30 @@ export const addNote = async ( { request, response }: { request: any, response: 
     }
 }
 
+// @desc Get a particular Note
+// @route /api/notes/:id
+const getNote = ({ params, response }: { params: { id: string }, response: any }) => {
+    const note: Note | undefined = notes.find(n => n.id === params.id);
+
+    if(note) {
+        response.status = 200;
+        response.body = {
+            message: "Success!",
+            status: 200,
+            data: note
+        };
+    } else {
+        response.status = 404;
+        response.body = {
+            message: "Note does not exist.",
+            status: 404
+        }
+    }
+}
+
 // @desc Update a note
 // @route /api/notes/:id/update
-export const updateNote = async ({ params, request, response }: { params: { id: string }, request: any, response: any}) => {
+const updateNote = async ({ params, request, response }: { params: { id: string }, request: any, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
 
     if (note) {
@@ -104,7 +104,7 @@ export const updateNote = async ({ params, request, response }: { params: { id: 
 
 // @desc Delete a Note
 // @route /api/notes/:id/delete
-export const deleteNote = ({ params, response }: { params: { id: string }, response: any}) => {
+const deleteNote = ({ params, response }: { params: { id: string }, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
     
     if(note) {
@@ -124,3 +124,11 @@ export const deleteNote = ({ params, response }: { params: { id: string }, respo
         };
     }
 }
+
+export const notesController = {
+    getNotes,
+    addNote,
+    getNote,
+    updateNote,
+    deleteNote
+};
