@@ -1,19 +1,19 @@
 [] 1. Controllers
-    [] 1. Notes Controller
+    [✓] 1. Notes Controller
     [] 2. Users Controller
 [] 2. Routes
-    [] 1. API Routes 
+    [✓] 1. API Routes 
     [] 2. Auth Routes
 [] 3. Interfaces
-    [] 1. Note Interface
-    [] 2. User Interface
+    [✓] 1. Note 
+    [] 2. User 
 [] 4. Functions 
-    [] 1. Notes
-        [] 1. getNotes
-        [] 2. getNote
-        [] 3. addNote
-        [] 4. updateNote
-        [] 5. deleteNote
+    [✓] 1. Notes
+        [✓] 1. getNotes
+        [✓] 2. getNote
+        [✓] 3. addNote
+        [✓] 4. updateNote
+        [✓] 5. deleteNote
     [] 2. Auth
         [] 1. login
         [] 2. register
