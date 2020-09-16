@@ -2,7 +2,7 @@ import { v4 } from 'https://deno.land/std/uuid/mod.ts';
 
 import { Note } from './../types/main.interface.ts';
 
-let notes: Array<Note> = [];
+export let notes: Array<Note> = [];
 
 // @desc Get all notes
 // @route /api/notes
