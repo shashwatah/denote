@@ -1,23 +1,28 @@
-[] 1. Controllers
+[] 1. Routes 
+    [] 1.   /auth
+    [] 2.   /api/notes
+    [] 3.   /api/notes/add
+    [] 4.   /api/notes/delete/:id
+    [] 5.   /api/notes/:id
+    [] 6.   /api/notes/:id/update
+    [] 7.   /api/users
+    [] 9.   /api/users/add
+    [] 10.  /api/users/delete/:id
+    [] 11.  /api/users/:id
+    [] 12.  /api/users/:id/notes
+    
+[] 2. Controllers
     [✓] 1. Notes Controller
     [] 2. Users Controller
-[] 2. Routes
-    [✓] 1. API Routes 
-    [] 2. Auth Routes
+
 [] 3. Interfaces
     [✓] 1. Note 
-    [] 2. User 
-[] 4. Functions 
-    [✓] 1. Notes
-        [✓] 1. getNotes
-        [✓] 2. getNote
-        [✓] 3. addNote
-        [✓] 4. updateNote
-        [✓] 5. deleteNote
-    [] 2. Auth
-        [] 1. login
-        [] 2. register
-        [] 3. logout
-        [] 4. generate jwt
-        [] 5. auth/validate jwt middleware 
+    [✓] 2. User 
+
+[] 4. Authentication
+    [] 1. Authenticate & Get JWT
+    [] 2. addUser
+    [] 3. generate jwt
+    [] 4. auth/validate jwt middleware 
+
 [] 5. Use a nosql database instead of objects for data storage. 

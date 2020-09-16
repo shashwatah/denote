@@ -12,6 +12,6 @@ router.get('/api/notes', getNotes)
     .get('/api/notes/:id', getNote)
     .post('/api/notes/add', addNote)
     .put('/api/notes/:id/update', updateNote)
-    .delete('/api/notes/:id/delete', deleteNote);
+    .delete('/api/notes/delete/:id', deleteNote);
 
 export default router;
