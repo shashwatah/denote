@@ -103,7 +103,7 @@ const updateNote = async ({ params, request, response }: { params: { id: string 
 
 
 // @desc Delete a Note
-// @route /api/notes/:id/delete
+// @route /api/notes/delete/:id
 const deleteNote = ({ params, response }: { params: { id: string }, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
     
