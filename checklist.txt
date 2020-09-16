@@ -1,10 +1,10 @@
 [] 1. Routes 
     [] 1.   /auth
-    [] 2.   /api/notes
-    [] 3.   /api/notes/add
-    [] 4.   /api/notes/delete/:id
-    [] 5.   /api/notes/:id
-    [] 6.   /api/notes/:id/update
+    [✓] 2.   /api/notes
+    [✓] 3.   /api/notes/add
+    [✓] 4.   /api/notes/delete/:id
+    [✓] 5.   /api/notes/:id
+    [✓] 6.   /api/notes/:id/update
     [] 7.   /api/users
     [] 9.   /api/users/add
     [] 10.  /api/users/delete/:id
