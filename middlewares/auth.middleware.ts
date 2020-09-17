@@ -11,7 +11,7 @@ export const authenticate = async ({ request, response}: { request: any, respons
     if(!authHeader) {
         response.status = 401;
         response.body = {
-            message: "Unauthorized!",
+            message: "Error: Unauthorized: No token found!",
             status: 401
         };
         return;
@@ -21,7 +21,7 @@ export const authenticate = async ({ request, response}: { request: any, respons
     if(!jwt) {
         response.status = 401;
         response.body = {
-            message: "Unauthorized!",
+            message: "Error: Unauthorized: Invalid token!",
             status: 401
         };
         return;
@@ -37,7 +37,7 @@ export const authenticate = async ({ request, response}: { request: any, respons
 
     response.status = 401;
     response.body = {
-        message: "Invalid Token.",
+        message: "Error: Unauthorized: Invalid token!",
         status: 401
     };
 };
