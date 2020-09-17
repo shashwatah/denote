@@ -23,17 +23,30 @@ $ denon start
 ## API Endpoints
 
 ```
-/api/notes                          # => Get all the notes
-/api/notes/:id                      # => Get one particular note
-/api/notes/add                      # => Add a note
-/api/notes/:id/update               # => Update a note
-/api/notes/:id/delete               # => Delete a note
+GET     /token                      # => Get auth token
+GET     /api/users                  # => Get all the users
+POST    /api/users/add              # => Add a user
+GET     /api/users/:id              # => Get one particular user
+GET     /api/users/:id/notes        # => Get one user's notes
+DELETE  /api/users/delete/:id       # => Delete a user
+GET     /api/notes                  # => Get all the notes
+GET     /api/notes/:id              # => Get one particular note
+POST    /api/notes/add              # => Add a note
+PUT     /api/notes/:id/update       # => Update a note
+DELETE  /api/notes/:id/delete       # => Delete a note
 ```
 
-## Update checklist
+#### Default user creds 
 
--  JWT Authentication 
--  NoSQL Database
+```
+username: admin
+password: admin
+```
+
+#### Update checklist
+
+-  [✓] JWT Authentication 
+-  [] NoSQL Database
 
 ## Authors
 
