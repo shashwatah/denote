@@ -1,5 +1,4 @@
 import { validateJwt, JwtValidation } from "https://deno.land/x/djwt/validate.ts";
-import { Payload } from "https://deno.land/x/djwt/create.ts";
 import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
 const secret = config()["SECRET"];
