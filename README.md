@@ -47,7 +47,7 @@ password: admin
 
 | Status |         Update         | 
 |--------|:----------------------:|
-|   ✓    |   JWT Authentication   |
+|  Fin.  |   JWT Authentication   |
 |        |     NoSQL Database     | 
 
 
