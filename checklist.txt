@@ -25,3 +25,7 @@
     [] 3. auth middleware: validate JWT
 
 [] 5. Use a nosql database instead of objects for data storage. 
+
+[] 6. Error handling?
+
+[] 7. Major Refactor: Common functions for users and notes?
