@@ -11,10 +11,12 @@ const header: Jose = {
     typ: "JWT"
 };
 
-export const getToken = async ({ request, response }: { request: any, response: any }) => {
-    const { value } = await request.body();
+const getToken = async ({ request, response }: { request: any, response: any }) => {
+    const body = await request.body();
 
     if(request.hasBody) {
+        const value = await body.value;
+
         for(const user of users) {
             if(value.username === user.username || value.password === user.password) {
                 const payload: Payload = {
@@ -23,12 +25,12 @@ export const getToken = async ({ request, response }: { request: any, response: 
                     exp: setExpiration(new Date().getTime() + 60000)
                 };
 
-                const jwt = await makeJwt({ secret, header, payload });
+                const jwt = await makeJwt({ key: secret, header, payload });
 
                 if(jwt) {
                     response.status = 200;
                     response.body = {
-                        message: "Sucess!",
+                        message: "Success!",
                         status: 200,
                         data: jwt
                     };
@@ -51,3 +53,7 @@ export const getToken = async ({ request, response }: { request: any, response: 
         };
     }
 };
+
+export const authController = {
+    getToken
+}

@@ -3,11 +3,8 @@
 
   "scripts": {
     "start": {
-      "cmd": "deno run server.ts",
-      "allow": [
-        "env",
-        "net"
-      ]
+      "cmd": "deno run --allow-net --allow-read server.ts",
+      "desc": "runs server.ts with network and read config"
     }
   }
 }
