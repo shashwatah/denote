@@ -20,7 +20,9 @@ Run Denote with the following command:
 $ denon start
 ```
 
-## API Endpoints
+## Important information 
+
+### API Endpoints
 
 ```
 GET     /token                      # => Get auth token
@@ -36,7 +38,7 @@ PUT     /api/notes/:id/update       # => Update a note
 DELETE  /api/notes/:id/delete       # => Delete a note
 ```
 
-#### Default user creds 
+### Default user creds 
 
 ```
 username: admin
