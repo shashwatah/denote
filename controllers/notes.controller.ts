@@ -8,6 +8,7 @@ export let notes: Array<Note> = [];
 // @route /api/notes
 const getNotes = ({ response }: { response: any }) => {
     if(notes.length) {
+        response.status = 200;
         response.body = {
             message: "Success!",
             status: 200,
