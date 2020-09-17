@@ -10,14 +10,14 @@ const getNotes = ({  response }: { response: any }) => {
     if(notes.length) {
         response.status = 200;
         response.body = {
-            message: "Success!",
-            status: 200,
-            data: notes
+            message: "Success: Notes found!",
+            data: notes,
+            status: 200
         };
     } else {
         response.status = 200;
         response.body = {
-            message: "No notes have been created.",
+            message: "No note has been created.",
         }
     }
 };
@@ -29,19 +29,19 @@ const addNote = async ( { request, response }: { request: any, response: any }) 
 
     if(request.hasBody) {
         const note: Note = await body.value;
-        note.id = v4.generate();
+        note.id = `note-${v4.generate()}`;
         note.userid = request.headers.get("user-id");
         notes.push(note);
         response.status = 201;
         response.body = {
-            message: "Note has been added!",
-            status: 201,
-            data: note
+            message: "Success: Note Added!",
+            data: note,
+            status: 201
         };
     } else {
         response.status = 400;
         response.body = {
-            message: "Enter some data.",
+            message: "Error: Enter some data.",
             status: 400
        };
     }
@@ -55,14 +55,14 @@ const getNote = ({ params, response }: { params: { id: string }, response: any }
     if(note) {
         response.status = 200;
         response.body = {
-            message: "Success!",
-            status: 200,
-            data: note
+            message: "Success: Note found!",
+            data: note,
+            status: 200
         };
     } else {
         response.status = 404;
         response.body = {
-            message: "Note does not exist.",
+            message: "Error: Note does not exist.",
             status: 404
         }
     }
@@ -84,22 +84,22 @@ const updateNote = async ({ params, request, response }: { params: { id: string 
 
             response.status = 200;
             response.body = {
-                message: "Note updated!",
+                message: "Success: Note updated!",
                 status: 200,
                 data: newNote
             };
         } else {
             response.status = 400;
             response.body = {
-                message: "Enter some data.",
+                message: "Error: Enter some data.",
                 status: 400
             } 
         }
     } else {
-        response.status = 400;
+        response.status = 404;
         response.body = {
-            message: "Note does not exist.",
-            status: 200,
+            message: "Error: Note does not exist.",
+            status: 404
         };
     }
 }
@@ -115,14 +115,14 @@ const deleteNote = ({ params, response }: { params: { id: string }, response: an
 
         response.status = 200;
         response.body = {
-            message: "Note removed!",
-            status: 200,
-            data: note
+            message: "Success: Note Deleted!",
+            data: note,
+            status: 200
         };
     } else {
         response.status = 404;
         response.body = {
-            message: "Note does not exist.",
+            message: "Error: Note does not exist.",
             status: 404
         };
     }

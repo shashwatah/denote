@@ -8,7 +8,6 @@ export let users: Array<User> = [{
     id: "user-1",
     username: "araekiel",
     password: "shash",
-    notes: []
 }];
 
 
@@ -17,9 +16,9 @@ export let users: Array<User> = [{
 const getUsers = ({ response }: { response: any }) => {
     response.status = 200;
     response.body = {
-        message: "Success!",
-        status: 200,
-        data: users
+        message: "Success: Users found!",
+        data: users,
+        status: 200
     };
 };
 
@@ -34,14 +33,14 @@ const addUser = async ({ request, response }: { request: any, response: any }) =
         users.push(user);
         response.status(201);
         response.body = {
-            "message": "User has been added!",
-            "status": 201,
-            "data": user
+            "message": "Success: User Added!",
+            "data": user,
+            "status": 201
         };
     } else {
         response.status = 400;
         response.body = {
-            message: "Enter some data.",
+            message: "Error: Enter some data.",
             status: 400
         };
     }
@@ -55,14 +54,14 @@ const getUser = ({ params, response }: { params: { id: string }, response: any }
     if(user) {
         response.status = 200;
         response.body = {
-            message: "Success!",
-            status: 200,
-            data: user
+            message: "Success: User found!",
+            data: user,
+            status: 200
         };
     } else {
         response.status = 404;
         response.body = {
-            message: "User does not exist.",
+            message: "Error: User does not exist.",
             status: 404
         };
     }
@@ -78,21 +77,20 @@ const getUserNotes = ({ params, response }: { params: { id: string }, response: 
         response.status = 200;
         if(userNotes.length) {
             response.body = {
-                message: "Success!",
-                status: 200,
-                data: userNotes
+                message: "Success: Notes found!",
+                data: userNotes,
+                status: 200
             };
         } else {
             response.body = {
-                message: "User hasn't created any notes.",
-                status: 200
+                message: "Error: User hasn't created any notes.",
             };
         }
     } else {
-        response.status = 400;
+        response.status = 404;
         response.body = {
-            message: "User does not exist.",
-            status: 400
+            message: "Error: User does not exist.",
+            status: 404
         };
     }
 };
@@ -107,14 +105,14 @@ const deleteUser = ({ params, response }: { params: { id: string }, response: an
 
         response.status = 200;
         response.body = {
-            message: "User removed!",
-            status: 200,
-            data: user
+            message: "Success: User Deleted!",
+            data: user,            
+            status: 200
         };
     } else {
         response.status = 404;
         response.body = {
-            message: "User does not exist.",
+            message: "Error: User does not exist.",
             status: 404
         };
     }

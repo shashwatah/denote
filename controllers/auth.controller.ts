@@ -29,14 +29,14 @@ const getToken = async ({ request, response }: { request: any, response: any }) 
                 if(jwt) {
                     response.status = 200;
                     response.body = {
-                        message: "Success!",
+                        message: "Success: Authenticated.",
+                        token: jwt,
                         status: 200,
-                        data: jwt
                     };
                 } else {
                     response.status = 500,
                     response.body = {
-                        message: "Something went wrong.",
+                        message: "Error: Something went wrong.",
                         status: 500,
                     };
                 }
@@ -47,7 +47,7 @@ const getToken = async ({ request, response }: { request: any, response: any }) 
 
         response.status = 400;
         response.body = {
-            message: "Wrong username or password.",
+            message: "Error: Wrong username or password.",
             status: 400
         };
     }
