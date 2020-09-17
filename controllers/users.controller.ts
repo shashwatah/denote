@@ -4,7 +4,7 @@ import { User } from './../types/main.interfaces.ts';
 import { notes } from './notes.controller.ts';
 
 
-const users: Array<User> = [{
+export const users: Array<User> = [{
     id: "user-1",
     username: "araekiel",
     password: "shash",
