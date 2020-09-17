@@ -1,6 +1,6 @@
 # Denote
 
-<h4>A REST API for a generic notes app built with <a href="https://deno.land/">Deno</a>, <a href="https://github.com/oakserver/oak">Oak</a>, and <a href="https://www.typescriptlang.org/">TypeScript</a>.</h4>
+<h4>REST API with JWT authentication for a generic notes app built with <a href="https://deno.land/">Deno</a>, <a href="https://github.com/oakserver/oak">Oak</a>, and <a href="https://www.typescriptlang.org/">TypeScript</a>.</h4>
 
 ## Instructions
 
@@ -45,8 +45,11 @@ password: admin
 
 #### Update checklist
 
--  [✓] JWT Authentication 
--  [] NoSQL Database
+| Status |         Update         | 
+|--------|:----------------------:|
+|   ✓    |   JWT Authentication   |
+|        |     NoSQL Database     | 
+
 
 ## Authors
 
