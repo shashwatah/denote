@@ -29,6 +29,7 @@ const addNote = async ( { request, response }: { request: any, response: any }) 
     if(request.hasBody) {
         const note: Note = await body.value;
         note.id = v4.generate();
+        note.userid = request.headers.get("user-id");
         notes.push(note);
         response.status = 201;
         response.body = {
