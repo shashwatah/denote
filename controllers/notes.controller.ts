@@ -6,36 +6,18 @@ export let notes: Array<Note> = [];
 
 // @desc Get all notes
 // @route /api/notes/:type
-const getNotes = ({ params, request, response }: { params: { type: string }, request: any, response: any }) => {
-    if(params.type === "my") {
-        const userNotes = notes.filter(n => n.userid === request.headers.get("user-id"));
-        if(userNotes.length) {
-            response.status = 200;
-            response.body = {
-                message: "Success!",
-                status: 200,
-                data: userNotes
-            };
-        } else {
-            response.status = 200;
-            response.body = {
-                message: "You have not created any notes yet.",
-            }
-        }
-        
+const getNotes = ({  response }: { response: any }) => {
+    if(notes.length) {
+        response.status = 200;
+        response.body = {
+            message: "Success!",
+            status: 200,
+            data: notes
+        };
     } else {
-        if(notes.length) {
-            response.status = 200;
-            response.body = {
-                message: "Success!",
-                status: 200,
-                data: notes
-            };
-        } else {
-            response.status = 200;
-            response.body = {
-                message: "No notes have been created.",
-            }
+        response.status = 200;
+        response.body = {
+            message: "No notes have been created.",
         }
     }
 };
