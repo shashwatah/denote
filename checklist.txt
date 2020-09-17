@@ -1,28 +1,28 @@
-[] 1. Routes 
-    [] 1.   /auth
+[✓] 1. Routes 
+    [✓] 1.   /token
     [✓] 2.   /api/notes
     [✓] 3.   /api/notes/add
     [✓] 4.   /api/notes/:id
     [✓] 5.   /api/notes/:id/update
     [✓] 6.   /api/notes/delete/:id
-    [] 7.   /api/users
-    [] 9.   /api/users/add
-    [] 10.  /api/users/:id
-    [] 11.  /api/users/:id/notes
-    [] 12.  /api/users/delete/:id
+    [✓] 7.   /api/users
+    [✓] 9.   /api/users/add
+    [✓] 10.  /api/users/:id
+    [✓] 11.  /api/users/:id/notes
+    [✓] 12.  /api/users/delete/:id
     
-[] 2. Controllers
+[✓] 2. Controllers
     [✓] 1. Notes Controller
-    [] 2. Users Controller
+    [✓] 2. Users Controller
 
-[] 3. Interfaces
+[✓] 3. Interfaces
     [✓] 1. Note 
     [✓] 2. User 
 
-[] 4. Authentication
-    [] 1. /auth endpoint: Authentication and generate JWT
-    [] 2. addUser
-    [] 3. auth middleware: validate JWT
+[✓] 4. Authentication
+    [✓] 1. /auth endpoint: Authentication and generate JWT
+    [✓] 2. addUser
+    [✓] 3. auth middleware: validate JWT
 
 [] 5. Use a nosql database instead of objects for data storage. 
 
