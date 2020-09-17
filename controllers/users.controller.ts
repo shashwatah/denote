@@ -5,9 +5,9 @@ import { notes } from './notes.controller.ts';
 
 
 export let users: Array<User> = [{
-    id: "user-1",
-    username: "araekiel",
-    password: "shash",
+    id: "user-admin",
+    username: "admin",
+    password: "admin",
 }];
 
 
