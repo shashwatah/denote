@@ -29,13 +29,13 @@ const addUser = async ({ request, response }: { request: any, response: any }) =
 
     if(request.hasBody) {
         const user: User = await body.value;
-        user.id = v4.generate();
+        user.id = `user-${v4.generate()}`;
         users.push(user);
-        response.status(201);
+        response.status = 201;
         response.body = {
-            "message": "Success: User Added!",
-            "data": user,
-            "status": 201
+            message: "Success: User Added!",
+            data: user,
+            status: 201
         };
     } else {
         response.status = 400;
