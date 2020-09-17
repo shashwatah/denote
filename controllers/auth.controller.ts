@@ -1,10 +1,9 @@
-import { validateJwt } from "https://deno.land/x/djwt/validate.ts";
 import { makeJwt, setExpiration, Jose, Payload } from "https://deno.land/x/djwt/create.ts";
 import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
 import { users } from './users.controller.ts';
 
-const secret = await config()['SECRET'];
+const secret = config()['SECRET'];
 
 const header: Jose = {
     alg: "HS256",
