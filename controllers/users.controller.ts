@@ -74,7 +74,7 @@ const getUserNotes = ({ params, response }: { params: { id: string }, response: 
     const user: User | undefined = users.find(u => u.id === params.id);
 
     if(user) {
-        const userNotes = notes.filter(n => n.userid != params.id);
+        const userNotes = notes.filter(n => n.userid === params.id);
         response.status = 200;
         if(userNotes.length) {
             response.body = {
