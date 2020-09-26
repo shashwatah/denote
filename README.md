@@ -1,5 +1,8 @@
 # Denote
 
+<a href="https://github.com/Araekiel/denote/blob/master/LICENSE"><img alt="MIT License" src="https://img.shields.io/apm/l/atomic-design-ui.svg?"></a>
+<a href="https://github.com/Araekiel/denote/releases/tag/v1.0"><img alt="Github Release" src="https://img.shields.io/badge/release-v1.0-blue"></a>
+
 <h4>REST API with JWT authentication for a generic notes app built with <a href="https://deno.land/">Deno</a>, <a href="https://github.com/oakserver/oak">Oak</a>, and <a href="https://www.typescriptlang.org/">TypeScript</a>.</h4>
 
 ## Instructions
