@@ -3,6 +3,7 @@ import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
 const secret = config()["SECRET"];
 
+// Standard auth middleware which will be used across almost all the endpoints.
 export const authenticate = async ({ request, response}: { request: any, response: any }, next: any) => {
     const headers: Headers = await request.headers;
 
@@ -29,6 +30,7 @@ export const authenticate = async ({ request, response}: { request: any, respons
 
     const validation: JwtValidation  = await validateJwt({ jwt, key: secret, algorithm: "HS256" });
     if(validation.isValid) {
+        // Adding user id from payload to headers so functions like getUserNotes can use it.
         const payload: any =  validation.payload;
         request.headers.set("user-id", payload.id);
         await next();

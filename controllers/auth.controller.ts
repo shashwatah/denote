@@ -3,6 +3,7 @@ import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
 import { users } from './users.controller.ts';
 
+// Getting th secret set in '.env' file.
 const secret = config()['SECRET'];
 
 const header: Jose = {
@@ -10,6 +11,8 @@ const header: Jose = {
     typ: "JWT"
 };
 
+// @desc Get API token by providing username and password in body of the requeset.
+// @route GET /api/token
 const getToken = async ({ request, response }: { request: any, response: any }) => {
     const body = await request.body();
 
@@ -18,6 +21,7 @@ const getToken = async ({ request, response }: { request: any, response: any }) 
 
         for(const user of users) {
             if(value.username === user.username || value.password === user.password) {
+                // Setting partial user data as the payload as it will later be required in auth middleware.
                 const payload: Payload = {
                     username: user.username,
                     id: user.id,

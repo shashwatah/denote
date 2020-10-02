@@ -4,7 +4,7 @@ import { Note } from './../types/main.interfaces.ts';
 
 export let notes: Array<Note> = [];
 
-// @desc Get all notes
+// @desc Get all the notes created by each user in the current session.
 // @route /api/notes/:type
 const getNotes = ({  response }: { response: any }) => {
     if(notes.length) {
@@ -22,7 +22,7 @@ const getNotes = ({  response }: { response: any }) => {
     }
 };
 
-// @desc Add a note
+// @desc Add a note.
 // @route /api/notes/add
 const addNote = async ( { request, response }: { request: any, response: any }) => {
     const body = await request.body();
@@ -47,7 +47,7 @@ const addNote = async ( { request, response }: { request: any, response: any }) 
     }
 }
 
-// @desc Get a particular Note
+// @desc Get a particular note with its id.
 // @route /api/notes/:id
 const getNote = ({ params, response }: { params: { id: string }, response: any }) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
@@ -68,7 +68,7 @@ const getNote = ({ params, response }: { params: { id: string }, response: any }
     }
 }
 
-// @desc Update a note
+// @desc Update a particular note with its id.
 // @route /api/notes/:id/update
 const updateNote = async ({ params, request, response }: { params: { id: string }, request: any, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);
@@ -105,7 +105,7 @@ const updateNote = async ({ params, request, response }: { params: { id: string 
 }
 
 
-// @desc Delete a Note
+// @desc Delete a Note.
 // @route /api/notes/delete/:id
 const deleteNote = ({ params, response }: { params: { id: string }, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);

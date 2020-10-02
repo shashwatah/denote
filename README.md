@@ -23,6 +23,8 @@ Run Denote with the following command:
 $ denon start
 ```
 
+> Denote reads the port it is supposed to run on from the '.env' file. The default port is 108. 
+
 ## Important information 
 
 ### API Endpoints
@@ -47,6 +49,10 @@ DELETE  /api/notes/:id/delete       # => Delete a note
 username: admin
 password: admin
 ```
+
+### Accessing the API 
+
+To get started send a request to /token with the default username and password in the body to get the auth token. That token is required to be sent with every request to any other endpoint as the 'Authorization' header.
 
 ## Update checklist
 
