@@ -3,7 +3,7 @@ import { v4 } from 'https://deno.land/std/uuid/mod.ts';
 import { User } from './../types/main.interfaces.ts';
 import { notes } from './notes.controller.ts';
 
-
+// Default user with username 'admin' added so you can try out the api before fiddling with the code.
 export let users: Array<User> = [{
     id: "user-admin",
     username: "admin",
@@ -11,7 +11,7 @@ export let users: Array<User> = [{
 }];
 
 
-// @desc Get all the users
+// @desc Get all the users.
 // @route /api/users
 const getUsers = ({ response }: { response: any }) => {
     response.status = 200;
@@ -22,7 +22,7 @@ const getUsers = ({ response }: { response: any }) => {
     };
 };
 
-// @desc Add a user
+// @desc Add a user.
 // @route /api/users/add
 const addUser = async ({ request, response }: { request: any, response: any }) => {
     const body = await request.body();
@@ -46,7 +46,7 @@ const addUser = async ({ request, response }: { request: any, response: any }) =
     }
 };
 
-// @desc Get one particular user
+// @desc Get one particular user.
 // @route /api/users/:id
 const getUser = ({ params, response }: { params: { id: string }, response: any }) => {
     const user: User | undefined  = users.find(u => u.id === params.id);
@@ -67,7 +67,7 @@ const getUser = ({ params, response }: { params: { id: string }, response: any }
     }
 };
 
-// @desc Get all the notes by a particular user
+// @desc Get all the notes created by one particular user.
 // @route /api/users/:id/notes
 const getUserNotes = ({ params, response }: { params: { id: string }, response: any }) => {
     const user: User | undefined = users.find(u => u.id === params.id);
@@ -95,7 +95,7 @@ const getUserNotes = ({ params, response }: { params: { id: string }, response: 
     }
 };
 
-// @desc Delete a user
+// @desc Delete a user.
 // @route /api/users/delete/:id
 const deleteUser = ({ params, response }: { params: { id: string }, response: any }) => {
     const user: User | undefined = users.find(u => u.id === params.id);

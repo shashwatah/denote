@@ -48,6 +48,10 @@ username: admin
 password: admin
 ```
 
+### Accessing the API 
+
+To get started send a request to /token with the default username and password in the body to get the auth token. That token is required to be sent with every request to any other endpoint as the 'Authorization' header.
+
 ## Update checklist
 
 | Status |         Update         | 
