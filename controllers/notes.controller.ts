@@ -4,7 +4,7 @@ import { Note } from './../types/main.interfaces.ts';
 
 export let notes: Array<Note> = [];
 
-// @desc Get all the notes created by each user.
+// @desc Get all the notes created by each user in the current session.
 // @route /api/notes/:type
 const getNotes = ({  response }: { response: any }) => {
     if(notes.length) {
@@ -68,7 +68,7 @@ const getNote = ({ params, response }: { params: { id: string }, response: any }
     }
 }
 
-// @desc Update a note.
+// @desc Update a particular note with its id.
 // @route /api/notes/:id/update
 const updateNote = async ({ params, request, response }: { params: { id: string }, request: any, response: any}) => {
     const note: Note | undefined = notes.find(n => n.id === params.id);

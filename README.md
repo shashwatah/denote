@@ -23,6 +23,8 @@ Run Denote with the following command:
 $ denon start
 ```
 
+> Denote reads the port it is supposed to run on from the '.env' file. The default port is 108. 
+
 ## Important information 
 
 ### API Endpoints

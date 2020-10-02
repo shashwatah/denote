@@ -3,6 +3,7 @@ import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
 const secret = config()["SECRET"];
 
+// Standard auth middleware which will be used across almost all the endpoints.
 export const authenticate = async ({ request, response}: { request: any, response: any }, next: any) => {
     const headers: Headers = await request.headers;
 

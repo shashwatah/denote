@@ -11,7 +11,7 @@ export let users: Array<User> = [{
 }];
 
 
-// @desc Get all the users.
+// @desc Get all the users in the current session.
 // @route /api/users
 const getUsers = ({ response }: { response: any }) => {
     response.status = 200;

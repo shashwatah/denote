@@ -3,7 +3,7 @@ import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
 import { users } from './users.controller.ts';
 
-// Secret set in '.env' file.
+// Getting th secret set in '.env' file.
 const secret = config()['SECRET'];
 
 const header: Jose = {
