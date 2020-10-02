@@ -1,8 +1,9 @@
 import { Application } from "https://deno.land/x/oak/mod.ts";
+import { config } from 'https://deno.land/x/dotenv/mod.ts';
 
 import router from './routes/api.routes.ts';
 
-const port: number = 108;
+const port: number = parseInt(config()["PORT"]);
 
 const server: Application = new Application();
 
