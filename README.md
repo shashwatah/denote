@@ -68,4 +68,4 @@ To get started send a request to /token with the default username and password i
 
 ## License 
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT License](https://github.com/Araekiel/denote/blob/master/LICENSE) | Copyright (c) 2020 Kumar Shashwat
