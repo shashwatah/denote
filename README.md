@@ -30,17 +30,17 @@ $ denon start
 ### API Endpoints
 
 ```
-GET     /token                      # => Get auth token
-GET     /api/users                  # => Get all the users
-POST    /api/users/add              # => Add a user
-GET     /api/users/:id              # => Get one particular user
-GET     /api/users/:id/notes        # => Get one user's notes
-DELETE  /api/users/delete/:id       # => Delete a user
-GET     /api/notes                  # => Get all the notes
-GET     /api/notes/:id              # => Get one particular note
-POST    /api/notes/add              # => Add a note
-PUT     /api/notes/:id/update       # => Update a note
-DELETE  /api/notes/:id/delete       # => Delete a note
+GET     /token                  # => Get auth token
+GET     /api/users              # => Get all the users
+POST    /api/users              # => Add a user
+GET     /api/users/:id          # => Get one particular user
+GET     /api/users/:id/notes    # => Get one user's notes
+DELETE  /api/users/:id          # => Delete a user
+GET     /api/notes              # => Get all the notes
+GET     /api/notes/:id          # => Get one particular note
+POST    /api/notes              # => Add a note
+PUT     /api/notes/:id          # => Update a note
+DELETE  /api/notes/:id          # => Delete a note
 ```
 
 ### Default user creds 
