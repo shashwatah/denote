@@ -23,6 +23,12 @@ Run Denote with the following command:
 $ denon start
 ```
 
+If denon doesn't work (or if you don't want to monitor file changes) use the following command:
+
+```bash
+$ deno run --allow-net --allow-read server.ts
+```
+
 > Denote reads the port it is supposed to run on from the '.env' file. The default port is 108. 
 
 ## Important information 
