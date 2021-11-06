@@ -13,14 +13,14 @@ router.get("/", ({ response }: { response: any }) => {
 
 router.get('/token', authController.getToken)
     .get('/api/users', authenticate , usersController.getUsers)
-    .post('/api/users/add', authenticate, usersController.addUser)
+    .post('/api/users', authenticate, usersController.addUser)
     .get('/api/users/:id', authenticate, usersController.getUser)
     .get('/api/users/:id/notes', authenticate, usersController.getUserNotes)
-    .delete('/api/users/delete/:id', authenticate, usersController.deleteUser)
+    .delete('/api/users/:id', authenticate, usersController.deleteUser)
     .get('/api/notes', authenticate, notesController.getNotes)
     .get('/api/notes/:id', authenticate, notesController.getNote)
-    .post('/api/notes/add', authenticate, notesController.addNote)
-    .put('/api/notes/:id/update', authenticate, notesController.updateNote)
-    .delete('/api/notes/delete/:id', authenticate, notesController.deleteNote);
+    .post('/api/notes', authenticate, notesController.addNote)
+    .put('/api/notes/:id', authenticate, notesController.updateNote)
+    .delete('/api/notes/:id', authenticate, notesController.deleteNote);
 
 export default router;

@@ -12,7 +12,7 @@ export let users: Array<User> = [{
 
 
 // @desc Get all the users in the current session.
-// @route /api/users
+// @route GET /api/users
 const getUsers = ({ response }: { response: any }) => {
     response.status = 200;
     response.body = {
@@ -23,7 +23,7 @@ const getUsers = ({ response }: { response: any }) => {
 };
 
 // @desc Add a user.
-// @route /api/users/add
+// @route POST /api/users
 const addUser = async ({ request, response }: { request: any, response: any }) => {
     const body = await request.body();
 
@@ -47,7 +47,7 @@ const addUser = async ({ request, response }: { request: any, response: any }) =
 };
 
 // @desc Get one particular user.
-// @route /api/users/:id
+// @route GET /api/users/:id
 const getUser = ({ params, response }: { params: { id: string }, response: any }) => {
     const user: User | undefined  = users.find(u => u.id === params.id);
 
@@ -68,7 +68,7 @@ const getUser = ({ params, response }: { params: { id: string }, response: any }
 };
 
 // @desc Get all the notes created by one particular user.
-// @route /api/users/:id/notes
+// @route GET /api/users/:id/notes
 const getUserNotes = ({ params, response }: { params: { id: string }, response: any }) => {
     const user: User | undefined = users.find(u => u.id === params.id);
 
@@ -96,7 +96,7 @@ const getUserNotes = ({ params, response }: { params: { id: string }, response: 
 };
 
 // @desc Delete a user.
-// @route /api/users/delete/:id
+// @route DELETE /api/users/:id
 const deleteUser = ({ params, response }: { params: { id: string }, response: any }) => {
     const user: User | undefined = users.find(u => u.id === params.id);
     
