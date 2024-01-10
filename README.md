@@ -1,9 +1,8 @@
 # Denote
 
-<a href="https://github.com/araekiel/denote/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green"></a>
-<a href="https://github.com/araekiel/denote/releases/tag/v1.0"><img alt="Github Release" src="https://img.shields.io/badge/release-v1.0-blue"></a>
-
 <h4>REST API with JWT authentication for a generic notes app built with <a href="https://deno.land/">Deno</a> (v1.4.0), <a href="https://github.com/oakserver/oak">Oak</a>, and <a href="https://www.typescriptlang.org/">TypeScript</a>.</h4>
+
+<a href="https://github.com/shashwatah/denote/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green"></a>
 
 ## Instructions
 
@@ -66,12 +65,3 @@ To get started send a request to /token with the default username and password i
 |--------|:----------------------:|
 |   ✅   |   JWT Authentication   |
 |        |     NoSQL Database     | 
-
-
-## Authors
-
-- araekiel - [Github](https://www.github.com/araekiel)
-
-## License 
-
-[MIT License](https://github.com/araekiel/denote/blob/main/LICENSE) | Copyright (c) 2022 Kumar Shashwat
